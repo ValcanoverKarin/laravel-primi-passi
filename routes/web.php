@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = [
+        'title' => 'Homepage',
+        'subtitle' => 'Laravel primi passi'
+    ];
+
+    return view('homepage', $data);
+})->name('homepage');
+
+Route::get('/other', function () {
+    return view('other');
+})->name('other');
